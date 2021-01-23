@@ -1,0 +1,32 @@
+// 坑爹的地方：可能会有nan的值，这时候要输出45.0
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+void solve() {
+    int v, d;
+    cin >> v >> d;
+    double ans = asin(d * 9.8/v/v) / M_PI * 90.0;
+    if (isnan(ans)) {
+        ans = 45.0;
+    }
+    cout << fixed << setprecision(7) << ans;
+}
+
+int main() {
+#ifdef PLAYGROUND_LOCAL
+    FILE *fre = freopen("kickstart.in", "r", stdin);
+#endif
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++) {
+        cout << "Case #" + to_string(i) + ": ";
+        solve();
+        cout << "\n";
+    }
+#ifdef PLAYGROUND_LOCAL
+    fclose(fre);
+#endif
+}

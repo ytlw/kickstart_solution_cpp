@@ -11,7 +11,7 @@ void solve() {
 }
 
 int main() {
-#ifdef INPUT_FROM_FILE
+#ifdef INPUT_FILE
     FILE *fre = freopen(INPUT_FILE, "r", stdin);
     if (fre == nullptr) {
         cout << "invalid input file" << endl;
@@ -26,7 +26,7 @@ int main() {
         cout << "Case #" << i << ": ";
         solve();
     }
-#ifdef INPUT_FROM_FILE
+#ifdef INPUT_FILE
     fclose(fre);
 #endif
     return 0;

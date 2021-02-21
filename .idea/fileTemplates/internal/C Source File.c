@@ -13,8 +13,8 @@ int main() {
         return 0;
     }
 #endif
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int t;
     cin >> t;
     for (int i = 1; i <= t; ++i) {

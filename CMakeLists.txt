@@ -3,6 +3,10 @@ project(kickstart)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_FLAGS
+        ${CMAKE_CXX_FLAGS}
+        -fsanitize=address,undefined)
+
 FUNCTION(build_all_cpp DIRECTORY INPUT_FROM_FILE)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${DIRECTORY})
     FILE(GLOB_RECURSE SRC_FILES "${DIRECTORY}/*.cpp")
@@ -16,7 +20,8 @@ FUNCTION(build_all_cpp DIRECTORY INPUT_FROM_FILE)
 endfunction()
 
 set(COMPILE_DIRECTORIES
-        archive/2013/practice)
+        archive/2013/practice
+        archive/2020/h)
 
 FOREACH(DIRECTORY ${COMPILE_DIRECTORIES})
     build_all_cpp(${DIRECTORY} true)

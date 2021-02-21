@@ -1,8 +1,13 @@
 #include <iostream>
+
 using namespace std;
 
 void solve() {
-
+    long long n, k, s;
+    cin >> n >> k >> s;
+    long long t1 = n + k;
+    long long t2 = k - 1 + (k - s) + (n - s + 1);
+    cout << min(t1, t2) << endl;
 }
 
 int main() {

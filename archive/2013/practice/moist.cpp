@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-string solve() {
+void solve() {
     int n;
     cin >> n;
     string largest;
@@ -18,19 +18,27 @@ string solve() {
             largest = s;
         }
     }
-    return to_string(cost) + "\n";
+    cout << cost << endl;
 }
 
 int main() {
-#ifdef PLAYGROUND_LOCAL
-    FILE *fre = freopen("kickstart.in", "r", stdin);
+#ifdef INPUT_FROM_FILE
+    FILE *fre = freopen(INPUT_FILE, "r", stdin);
+    if (fre == nullptr) {
+        cout << "invalid input file" << endl;
+        return 0;
+    }
 #endif
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int t;
     cin >> t;
-    for (int i = 1; i <= t; i++) {
-        cout << "Case #" + to_string(i) + ": " + solve();
+    for (int i = 1; i <= t; ++i) {
+        cout << "Case #" << i << ": ";
+        solve();
     }
-#ifdef PLAYGROUND_LOCAL
+#ifdef INPUT_FROM_FILE
     fclose(fre);
 #endif
+    return 0;
 }

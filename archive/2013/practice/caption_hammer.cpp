@@ -12,21 +12,27 @@ void solve() {
     if (isnan(ans)) {
         ans = 45.0;
     }
-    cout << fixed << setprecision(7) << ans;
+    cout << fixed << setprecision(7) << ans << endl;
 }
 
 int main() {
-#ifdef PLAYGROUND_LOCAL
-    FILE *fre = freopen("kickstart.in", "r", stdin);
+#ifdef INPUT_FROM_FILE
+    FILE *fre = freopen(INPUT_FILE, "r", stdin);
+    if (fre == nullptr) {
+        cout << "invalid input file" << endl;
+        return 0;
+    }
 #endif
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int t;
     cin >> t;
-    for (int i = 1; i <= t; i++) {
-        cout << "Case #" + to_string(i) + ": ";
+    for (int i = 1; i <= t; ++i) {
+        cout << "Case #" << i << ": ";
         solve();
-        cout << "\n";
     }
-#ifdef PLAYGROUND_LOCAL
+#ifdef INPUT_FROM_FILE
     fclose(fre);
 #endif
+    return 0;
 }

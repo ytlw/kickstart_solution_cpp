@@ -21,7 +21,8 @@ endfunction()
 
 set(COMPILE_DIRECTORIES
         archive/2013/practice
-        archive/2020/h)
+        archive/2020/h
+        tmp)
 
 FOREACH(DIRECTORY ${COMPILE_DIRECTORIES})
     build_all_cpp(${DIRECTORY} true)

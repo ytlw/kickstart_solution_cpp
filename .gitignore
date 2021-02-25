@@ -3,5 +3,4 @@
 !/.idea/fileTemplates/
 /build/
 /cmake-build-debug/
-/kickstart.in
-/main.cpp
+/tmp

@@ -14,8 +14,8 @@ long long digits2num(vector<int> &digits, int n) {
 // side = 9 means to set biggest, side = 1 means to set smallest
 void fillDigits(vector<int> &digits, int start, int offset, int side) {
     for (int i = start; i >= 0; --i) {
-        offset = side - offset;
-        digits[i] = offset;
+        digits[i] = side - offset;
+        offset = 1 - offset;
     }
 }
 

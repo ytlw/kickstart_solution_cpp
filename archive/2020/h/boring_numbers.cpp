@@ -116,6 +116,9 @@ void solve() {
             }
             if (tmpPos == lenR) {
                 --lenR;
+                for (int i = 0; i < lenR; ++i) {
+                    digitsR[i] = digitsR[i + 1];
+                }
             }
             fillDigits(digitsR, pos - 1, offset, 9);
         }

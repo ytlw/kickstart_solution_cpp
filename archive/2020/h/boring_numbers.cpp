@@ -103,13 +103,13 @@ void solve() {
             --digitsR[pos];
             fillDigits(digitsR, pos - 1, offset, 9);
         } else {
-            digitsR[pos] = 8;
+            digitsR[pos] = 9;
             int tmpPos = pos + 1;
             while (tmpPos < lenR) {
                 digitsR[tmpPos] -= 2;
                 if (digitsR[tmpPos] < 0) {
                     digitsR[tmpPos] += 10;
-                    --tmpPos;
+                    ++tmpPos;
                 } else {
                     break;
                 }

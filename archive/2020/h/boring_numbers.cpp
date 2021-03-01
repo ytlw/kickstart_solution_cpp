@@ -12,10 +12,10 @@ long long digits2num(vector<int> &digits, int n) {
 }
 
 // side = 9 means to set biggest, side = 1 means to set smallest
-void fillDigits(vector<int> &digits, int start, int offset, int side) {
+void fillDigits(vector<int> &digits, int start, int preOffset, int side) {
     for (int i = start; i >= 0; --i) {
-        digits[i] = side - offset;
-        offset = 1 - offset;
+        digits[i] = side - preOffset;
+        preOffset = 1 - preOffset;
     }
 }
 
@@ -85,6 +85,8 @@ void solve() {
             if (tmpPos == lenL) {
                 digitsL.push_back(1);
                 ++lenL;
+                pos = lenL - 1;
+                offset = 1;
             }
             fillDigits(digitsL, pos - 1, offset, 1);
         }
@@ -116,9 +118,9 @@ void solve() {
             }
             if (tmpPos == lenR) {
                 --lenR;
-                for (int i = 0; i < lenR; ++i) {
-                    digitsR[i] = digitsR[i + 1];
-                }
+                digitsR[lenR - 1] = 9;
+                pos = lenR - 1;
+                offset = 1;
             }
             fillDigits(digitsR, pos - 1, offset, 9);
         }

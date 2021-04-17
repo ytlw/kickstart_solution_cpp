@@ -22,6 +22,7 @@ endfunction()
 set(COMPILE_DIRECTORIES
         archive/2013/practice
         archive/2020/h
+        archive/2021/a
         tmp)
 
 FOREACH(DIRECTORY ${COMPILE_DIRECTORIES})
